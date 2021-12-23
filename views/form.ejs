@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce</title>
+</head>
+<body>
+    <form action="/api/productos" method="post">
+        <label name="title">Producto</label>
+        <input type="text" name="title">
+        <br>
+        <label name="description">Descripcion</label>
+        <input type="text" name="description">
+        <br>
+        <label name="codigo">Codigo</label>
+        <input type="text" name="codigo">
+        <br>
+        <label name="price">Precio</label>
+        <input type="number" name="price">
+        <br>
+        <label name="stock">Stock</label>
+        <input type="number" name="stock">
+        <br>
+        <button>Enviar</button>
+    </form>
+    <% if(id){ %>
+        <% if(product){ %>
+            <h4>Producto: <%= product.title %>, price: <%= product.price %> , horario de creacion: <%= product.timeStamp %> </h4>
+        <% } else{ %>
+            <p>No existe producto con id: <%= id %></p>
+        <% }%>  
+    <% }else{ %>
+        <p>El id no esta especificado</p>
+    <% } %> 
+</body>
+</html>
